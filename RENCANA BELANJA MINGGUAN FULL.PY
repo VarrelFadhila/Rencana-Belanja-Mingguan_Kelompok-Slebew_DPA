@@ -1,12 +1,8 @@
-# -------------------------------------------------------
-# APLIKASI RENCANA BELANJA MINGGUAN
-# Tanpa OOP - Sesuai aturan UAS
-# -------------------------------------------------------
 
-# List data belanja
+
 belanja = []
 
-# --------------------- Fungsi --------------------------
+
 
 def tambah_data():
     print("\n=== Tambah Data Belanja ===")
@@ -123,7 +119,7 @@ def analisis():
         total += item["harga"]
 
         # kategori
-        kat = item["kategori"]
+        kategori = item["kategori"]
         kategori_total[kat] = kategori_total.get(kat, 0) + item["harga"]
 
         # termahal & termurah
@@ -136,7 +132,7 @@ def analisis():
     print(f"Barang Termurah: {termurah['nama']} - Rp{termurah['harga']}")
     print("\nPengeluaran Per Kategori:")
     
-    for kat, t in kategori_total.items():
+    for kategori, t in kategori_total.items():
         print(f"- {kat}: Rp{t}")
 
     print("\nTotal Belanja Mingguan :", total)
@@ -206,4 +202,5 @@ while True:
         print("Keluar...")
         break
     else:
+
         print("Menu tidak valid!")
