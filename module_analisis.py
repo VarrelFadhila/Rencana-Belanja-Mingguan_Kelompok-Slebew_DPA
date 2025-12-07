@@ -35,4 +35,4 @@ def analisis():
     print("Estimasi Bulanan :", total * 4)
 
     if total > 300000:
-        print("\033[93m⚠️ Anda melebihi 300.000/minggu!\033[0m")
+        print("Anda melebihi 300.000/minggu!")
