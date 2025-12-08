@@ -13,16 +13,18 @@ def analisis():
     total = 0
     kategori_total = {}
 
-    for item in belanja:
-        total += item["harga"]
+    for barang in belanja:
+        total += barang["harga"]
 
-        kategori = item["kategori"]
-        kategori_total[kategori] = kategori_total.get(kategori, 0) + item["harga"]
-
-        if item["harga"] > termahal["harga"]:
-            termahal = item
-        if item["harga"] < termurah["harga"]:
-            termurah = item
+        kategori = barang["kategori"]
+        if kategori not in kategori_total:
+            kategori_total[kategori] = 0
+        kategori_total[kategori] += barang["harga"]
+        
+        if barang["harga"] > termahal["harga"]:
+            termahal = barang
+        if barang["harga"] < termurah["harga"]:
+            termurah = barang
 
     print(f"Barang Termahal: {termahal['nama']} - Rp{termahal['harga']}")
     print(f"Barang Termurah: {termurah['nama']} - Rp{termurah['harga']}")
