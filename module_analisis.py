@@ -23,6 +23,7 @@ def analisis():
         
         if barang["harga"] > termahal["harga"]:
             termahal = barang
+            
         if barang["harga"] < termurah["harga"]:
             termurah = barang
 
