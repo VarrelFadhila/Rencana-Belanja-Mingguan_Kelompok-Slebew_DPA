@@ -16,8 +16,8 @@ def analisis():
     for item in belanja:
         total += item["harga"]
 
-        kat = item["kategori"]
-        kategori_total[kat] = kategori_total.get(kat, 0) + item["harga"]
+        kategori = item["kategori"]
+        kategori_total[kategori] = kategori_total.get(kategori, 0) + item["harga"]
 
         if item["harga"] > termahal["harga"]:
             termahal = item
@@ -28,8 +28,8 @@ def analisis():
     print(f"Barang Termurah: {termurah['nama']} - Rp{termurah['harga']}")
     print("\nPengeluaran Per Kategori:")
     
-    for kat, t in kategori_total.items():
-        print(f"- {kat}: Rp{t}")
+    for kategori, t in kategori_total.items():
+        print(f"- {kategori}: Rp{t}")
 
     print("\nTotal Belanja Mingguan :", total)
     print("Estimasi Bulanan :", total * 4)
